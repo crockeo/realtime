@@ -13,6 +13,7 @@ import Data.IORef
 import GameState
 import Direction
 import Board
+import Input
 
 -- Starting the game
 start :: (Int, Int) -> IO Int
@@ -33,11 +34,10 @@ updateLoop gsRef doneRef = do
   if done
     then stop
     else do
-      putStr "\n"
+      clearTerminal
       (readIORef gsRef) >>= drawGameState
-      putStr ": "
 
-      threadDelay 1000000
+      threadDelay 750000
 
       modifyIORef gsRef (updateGameState)
 
@@ -55,8 +55,8 @@ inputLoop gsRef doneRef = do
   if done
     then return ()
     else do
-      input <- getLine
-      handleInput gsRef (head input)
+      input <- getCharNoEnter
+      handleInput gsRef (input)
       inputLoop gsRef doneRef
 
 -- Handling input
