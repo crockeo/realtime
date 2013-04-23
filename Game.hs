@@ -20,7 +20,7 @@ start :: (Int, Int) -> IO Int
 start size = do
   gsRef <- newIORef $ GameState (createBasicBoard size) Upwards
   doneRef <- newIORef False
-  forkIO (inputLoop gsRef doneRef)
+  forkOS (inputLoop gsRef doneRef)
   updateLoop gsRef doneRef
 
 -- Stopping the game
