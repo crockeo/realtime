@@ -1,4 +1,4 @@
 # Ignoring compiled objects and binaries
 *.exe
 *.o
-*.hl
+*.hi
