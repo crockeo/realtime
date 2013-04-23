@@ -7,8 +7,17 @@
 
 module Main where
 
+import Input
 import Game
 
 -- Entry point
 main :: IO Int
-main = start (10, 10)
+main = do
+  ret <- start (10, 10)
+
+  -- A little g'bye message
+  clearTerminal
+  putStrLn "G'bye!"
+  getLine
+
+  return ret
