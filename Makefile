@@ -8,3 +8,6 @@ FLAGS=-o $(OUT) -outputdir $(OUTDIR)
 
 default:
 	$(CC) $(FLAGS) $(SOURCES)
+
+clean:
+	rm -f *.hi *.o $(OUT)
