@@ -7,6 +7,7 @@
 
 module Game where
 
+import System.Console.ANSI
 import Control.Concurrent
 import Data.IORef
 
@@ -34,7 +35,7 @@ updateLoop gsRef doneRef = do
   if done
     then stop
     else do
-      clearTerminal
+      clearScreen
       (readIORef gsRef) >>= drawGameState
 
       threadDelay 750000

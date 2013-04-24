@@ -7,6 +7,7 @@
 
 module Main where
 
+import System.Console.ANSI
 import System.IO
 import Input
 import Game
@@ -17,6 +18,7 @@ main = do
   hSetBuffering stdout NoBuffering
   hSetBuffering stdin NoBuffering
 
+  setTitle "Realtime"
   ret <- start (10, 10)
 
   clearTerminal

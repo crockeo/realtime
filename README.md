@@ -8,3 +8,4 @@ An experiment in creating real-time games in Haskell. This specific game is a so
 
 * Primary author: Crockeo
 * Language: Haskell
+* Plugins (all available from _cabal_): 'ansi-terminal'
