@@ -55,8 +55,8 @@ inputLoop gsRef doneRef = do
   if done
     then return ()
     else do
-      input <- getCharNoEnter
-      handleInput gsRef (input)
+      input <- getChar
+      handleInput gsRef input
       inputLoop gsRef doneRef
 
 -- Handling input
