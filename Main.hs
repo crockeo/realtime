@@ -14,6 +14,7 @@ import Game
 -- Entry point
 main :: IO Int
 main = do
+  hSetBuffering stdout NoBuffering
   hSetBuffering stdin NoBuffering
 
   ret <- start (10, 10)
